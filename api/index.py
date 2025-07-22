@@ -11,7 +11,7 @@ data = {
             "1 is husband of 2",
             "1 is wife of 2",
             "1 will propose 2 toda2",
-            "1 wants to marr2 2"
+            "1 wants to marry 2"
         ],
         "family": [
             "1 is father of 2",
@@ -210,7 +210,7 @@ def get_relation():
     json_flag = request.args.get("json")
     category = request.args.get('category')
     if not person_a or not person_b:
-        abort(400, description="Missing required query parameters 'user1' and 'user2'")
+        abort(400, description="Missing required query parameters 'person1' and 'person2'")
 
     if not category:
         abort(400, description="Missing required query parameter 'category'")
