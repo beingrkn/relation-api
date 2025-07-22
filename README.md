@@ -1,28 +1,115 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+# :revolving_hearts: Relationship Generator API
 
-# Flask + Vercel
+A fun and expressive Flask API that generates dynamic relationship scenarios between two people. From wholesome to chaotic, romantic to spicy - this API delivers random, personalized relationship statements based on custom categories.
 
-This example shows how to use Flask 3 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+---
 
-## Demo
+## :rocket: Features
 
-https://flask-python-template.vercel.app/
+* Generate randomized relationship lines between two people
+* Multiple categories: **family, romantic, funny, spicy, wholesome**, and more
+* JSON and plain text support
+* Perfect for games, bots, and entertainment apps
 
-## How it Works
+---
 
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
+## :link: Endpoint
 
-## Running Locally
+### `GET /relation`
 
-```bash
-npm i -g vercel
-vercel dev
+Generates a relationship scenario between two people.
+
+#### :small_orange_diamond: Query Parameters:
+
+| Parameter  | Required | Description                                                      |
+| ---------- | -------- | ---------------------------------------------------------------- |
+| `person1`  | :white_check_mark:        | Name to replace placeholder `1`                                  |
+| `person2`  | :white_check_mark:        | Name to replace placeholder `2`                                  |
+| `category` | :white_check_mark:        | Scenario category (see below). Use `random` for random selection |
+| `json`     | :x:        | If set to `true`, returns a JSON object instead of plain text    |
+
+---
+
+## :open_file_folder: Available Categories
+
+* `relations.basic`
+* `relations.family`
+* `relations.romantic`
+* `relations.friendship`
+* `relations.funny`
+* `wants_to`
+* `doing_together.wholesome`
+* `doing_together.fun`
+* `doing_together.chaotic`
+* `doing_together.flirty`
+* `doing_together.spicy`
+* `doing_together.spiciest_safe`
+
+---
+
+## :test_tube: Example Requests
+
+### Plain Text Response
+
+```
+GET /relation?person1=Ravi&person2=Priya&category=relations.romantic
 ```
 
-Your Flask application is now available at `http://localhost:3000`.
+**Response:**
 
-## One-Click Deploy
+```
+RKN is dating Godz
+```
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+### JSON Response
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+```
+GET /relation?person1=Ravi&person2=Priya&category=doing_together.flirty&json=true
+```
+
+**Response:**
+
+```json
+{
+  "category": "doing_together.flirty",
+  "text": "RKN and Godz are sharing a bed (just sleeping... maybe)"
+}
+```
+
+---
+
+## 🔨 Running Locally
+
+1. Clone this repository
+2. Install Flask:
+
+   ```bash
+   pip install flask
+   ```
+3. Run the server:
+
+   ```bash
+   python app.py
+   ```
+4. Visit:
+
+   ```
+   http://localhost:5000/relation?person1=Alice&person2=Bob&category=random
+   ```
+
+---
+
+## :pushpin: Notes
+
+* Placeholders `1` and `2` in the template are automatically replaced with `person1` and `person2`.
+* If the provided category doesn't exist, the API will return a 404 error.
+* JSON output is optional and enabled using `json=true`.
+
+---
+
+## :orange_heart: License
+
+This project is open-source and free to use. Customize and expand it for your own creative apps!
+
+---
+
