@@ -101,7 +101,7 @@ GET /relation?person1=RKN&person2=Godz&category=doing_together.flirty&json=true
 
 ## :pushpin: Notes
 
-* Placeholders `1` and `2` in the template are automatically replaced with `person1` and `person2`.
+* Placeholders `{user1}` and `{user2}` in the template are automatically replaced with `person1` and `person2`.
 * If the provided category doesn't exist, the API will return a 404 error.
 * JSON output is optional and enabled using `json=true`.
 
