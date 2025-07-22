@@ -52,7 +52,7 @@ Generates a relationship scenario between two people.
 ### Plain Text Response
 
 ```
-GET /relation?person1=Ravi&person2=Priya&category=relations.romantic
+GET /relation?person1=RKN&person2=Godz&category=relations.romantic
 ```
 
 **Response:**
@@ -64,7 +64,7 @@ RKN is dating Godz
 ### JSON Response
 
 ```
-GET /relation?person1=Ravi&person2=Priya&category=doing_together.flirty&json=true
+GET /relation?person1=RKN&person2=Godz&category=doing_together.flirty&json=true
 ```
 
 **Response:**
@@ -94,7 +94,7 @@ GET /relation?person1=Ravi&person2=Priya&category=doing_together.flirty&json=tru
 4. Visit:
 
    ```
-   http://localhost:5000/relation?person1=Alice&person2=Bob&category=random
+   http://localhost:5000/relation?person1=RKN&person2=Godz&category=random
    ```
 
 ---
